@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tafels</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        margin: auto;
+      }
+      td, th {
+        border: 1px solid black;
+        padding: 5px;
+        text-align: center;
+      }
+      th {
+        background-color: lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Tafel</th>
+        <th>Resultaten</th>
+      </tr>
+      <script>
+        // Maak een array aan met willekeurige tafels
+        let tafels = [2, 4, 6, 8];
+
+        // Loop door de tafels array heen en genereer de bijbehorende tafels
+        tafels.forEach(function(tafel) {
+          // Maak een nieuwe rij in de tabel
+          let tr = document.createElement('tr');
+          // Maak een cel voor de tafel
+          let th = document.createElement('th');
+          th.textContent = `Tafel van ${tafel}`;
+          tr.appendChild(th);
+          // Maak een cel voor de resultaten van de tafel
+          let td = document.createElement('td');
+          let tafelString = '';
+          for(let i = 1; i <= 10; i++) {
+            tafelString += `${i} x ${tafel} = ${i * tafel} <br>`;
+          }
+          td.innerHTML = tafelString;
+          tr.appendChild(td);
+          // Voeg de rij toe aan de tabel
+          document.querySelector('table').appendChild(tr);
+        });
+      </script>
+    </table>
+  </body>
+</html>
