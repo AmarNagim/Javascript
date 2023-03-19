@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Oplopende pyramide van getallen</title>
+  </head>
+  <body>
+    <h1>Piramide Oplopend</h1> <!-- Nieuwe h1 element -->
+    <script>
+      // Vraag aan de gebruiker om een getal in te voeren
+      let input = prompt("Voer een getal in:");
+
+      // Converteer de invoer naar een getal en maak een array aan met getallen van 1 t/m input
+      let numArray = Array.from({length: parseInt(input)}, (_, i) => i + 1);
+
+      // Maak een ul-element aan om de oplopende pyramide van getallen in te weergeven
+      let ul = document.createElement("ul");
+
+      // Loop door de array heen en maak voor elke rij een li-element aan
+      for(let i = 0; i < numArray.length; i++) {
+        let row = "";
+        for(let j = 0; j <= i; j++) {
+          row += numArray[j] + " ";
+        }
+        let li = document.createElement("li");
+        li.textContent = row;
+        ul.appendChild(li);
+      }
+
+      // Voeg het ul-element toe aan de body van de pagina
+      document.body.appendChild(ul);
+    </script>
+  </body>
+</html>
