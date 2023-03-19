@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pyramide</title>
+  </head>
+  <body>
+    <h1>Piramide aflopend</h1>
+    <p>Gebruikte array: <span id="array"></span></p>
+    <ul id="pyramid"></ul>
+    <script>
+      // Vraag aan de gebruiker om een getal in te voeren
+      let input = prompt("Voer een getal in:");
+
+      // Converteer de invoer naar een getal en maak een array aan met getallen van 0 t/m input
+      let numArray = Array.from({ length: parseInt(input) + 1 }, (_, i) => i);
+      document.getElementById("array").textContent = numArray.join(", ");
+
+      // Maak een ul-element aan om de piramide van getallen in te weergeven
+      let ul = document.getElementById("pyramid");
+
+      // Loop door de array heen en maak voor elke rij een li-element aan
+      for(let i = 1; i <= numArray.length; i++) {
+        let row = "";
+        for(let j = 1; j <= i; j++) {
+          row += "  " + numArray[j-1];
+        }
+        let li = document.createElement("li");
+        li.textContent = row;
+        ul.appendChild(li);
+      }
+
+      // Draai de volgorde van de rijen om en plaats deze terug in de ul
+      let rows = Array.from(ul.getElementsByTagName("li"));
+      rows.reverse();
+      ul.innerHTML = "";
+      rows.forEach(row => ul.appendChild(row));
+    </script>
+  </body>
+</html>
