@@ -1,0 +1,29 @@
+button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .red {
+    background-color: red;
+  }
+  
+  .purple {
+    background-color: purple;
+  }
+  
+  .blue {
+    background-color: blue;
+  }
+  
+  .black {
+    background-color: black;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
